@@ -1,0 +1,380 @@
+IUT Charlemagne - Dept info 2023-2024
+Programmation 1 DUT 1A
+Projet `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+1 Projet `a rendre
+Ce projet est un projet `a faire de mani`ere individuelle et `a rendre `a votre encadrant
+via le module Bases de la Prog sur arche. Il donnera lieu `a une ´evaluation qui comptera
+`a hauteur de 15% dans la note finale du module.
+Vous devrez rendre IMPERATIVEMENT pour le mardi 14/11/2023 sur
+arche :
+des sources comment´ees qui compilent : tout probl`eme dans la compilation
+ou l’absence de commentaire entrainera des points en moins ;
+une version d´ej`a compil´ee de votre programme ;
+des classes de test compl´et´ees et int´egralement comment´ees (cf fin de l’´enonc´e) ;
+un r´epertoire contenant la javadoc g´en´er´ee `a partir de votre projet.
+ATTENTION :
+Veuillez respecter IMPERATIVEMENT les noms des classes et m´ethodes
+que l’on vous donne (majuscule comprise, sans accent et sans faute d’orthographe
+- cf conventions en annexe du polycopi´e). Respectez aussi l’ordre des param`etres
+dans les fonctions ou m´ethodes.
+Tous les attributs doivent ˆetre d´eclar´es en private, les m´ethodes sont d´eclar´ees
+en public sauf pr´ecision dans l’´enonc´e.
+Les m´ethodes ne doivent contenir aucun System.out.println sous peine de ne
+pas pouvoir ˆetre corrig´ees facilement. Des points pourront ˆetre retir´es si cette
+consigne n’est pas respect´ee.
+Votre projet est `a faire en individuel uniquement, tous les projets seront
+test´es par une application capable de d´etecter automatiquement les tentatives
+de fraude et nous s´evirons si besoin (comme cela a d´ej`a ´et´e fait par le pass´e).
+2 Pr´esentation du projet
+Le projet va avoir pour objectif de repr´esenter (tr`es simplement) un combat entre
+le puissant Legolas et l’orc ninja de la tribu Uruk-Hai. De mani`ere plus pr´ecise, il s’agit
+de programmer plusieurs classes pour mod´eliser des guerriers et leurs arcs :
+la classe Arc a pour objectif de repr´esenter un arc avec ses d´egats et les fl`eches
+disponibles dans son carquois ;
+la classe Guerrier a pour objectif de repr´esenter un guerrier avec son nom, ses
+points de vie et son arc.
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+1
+3 Structuration du projet
+Le fichier .zip fourni sur arche vous donne la structure de sous-r´epertoires `a respecter pour votre projet :
+un r´epertoire principal gr Z nom dont le nom est `a modifier
+Z doit d´esigner votre num´ero de groupe
+nom doit d´esigner votre nom
+ce r´epertoire contient plusieurs sous-r´epertoires
+un r´epertoire src qui doit contenir les fichier .java ;
+un r´epertoire javadoc qui contiendra le r´esultat de la javadoc.
+4 La classe Arc
+Ecrire la classe ´ Arc dans le fichier Arc.java avec les indications suivantes.
+Question 1
+4.1 Attributs
+Le classe Arc a pour objectif de repr´esenter une arme qu’un guerrier pourra utiliser
+pour combattre d’autres guerriers. Un arc est caract´eris´e par plusieurs attributs priv´es :
+un attribut entier degats pr´ecisant les d´egˆats que fait l’arc lorsqu’il est utilis´e ;
+un attribut entier fleches d´esignant le nombre de fl`eches restantes dans le
+carquois de l’arc.
+4.2 Constructeurs
+La classe Arc poss`ede deux constructeurs :
+un constructeur sans param`etre qui construit un arc par d´efaut (avec 5 d´egats
+et 3 fl`eches) ;
+un constructeur avec deux param`etres entiers dg et fl qui construit un arc
+faisant dg d´egats et poss´edant fl fl`eches.
+Les d´egˆats et le nombre de fl`eches doivent ˆetre positifs ou nuls. Lorsque l’un des
+param`etres est n´egatif, la valeur de l’attribut correspondant doit ˆetre de 0.
+4.3 M´ethodes Accesseurs
+Ecrire les m´ethodes ´ getDegats et getFleches.
+Attention ! Sauf indication contraire, ces accesseurs ne doivent servir que dans vos
+m´ethodes de test pour v´erifier les bonnes valeurs des attributs.
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+2
+4.4 Autres M´ethodes
+recharger : Ecrire la m´ethode ´ recharger qui prend en param`etre un entier
+nFleches et ajoute ces nFleches nouvelles fl`eches au nombre de fl`eches du carquois. Lorsque le nombre de fl`eches pass´e en param`etre est n´egatif, rien ne doit
+se passer.
+utiliser : Ecrire la m´ethode ´ utiliser qui ne prend aucun param`etre et
+consiste `a utiliser l’arc. Cette m´ethode r´eduit de un le nombre de fl`eches disponibles et retourne les d´egats de l’arc. Si le nombre de fl`eches est d´ej`a ´egal `a 0
+quand la m´ethode est appel´ee, le nombre de fl`eches ne diminue pas et l’arc ne
+fait pas de d´egats (les d´egats retourn´es par la m´ethode valent 0).
+toString : Ecrire la m´ethode ´ toString qui retourne la chaine "-arc" suivie
+de ses degats et du nombre fleches de fl`eches restantes sous la forme suivante 1
+"-arc(d:degats,f:fleches )"
+o`u degats et fleches repr´esentent les valeurs de ces attributs.
+Ainsi, la chaine retourn´ee pour un arc faisant 2 de d´egˆats et poss´edant 5 fl`eches
+doit ˆetre "-arc(d:2,f:5)"
+4.5 Tests
+A l’aide des indications de la section 6, ´ecrire la classe de test TestArc associ´ee
+`a la classe Arc. N’oubliez pas de tester toutes les situations possibles (un test
+diff´erent par situation).
+Question 2
+5 La classe Guerrier
+Ecrire la classe ´ Guerrier dans le fichier Guerrier.java avec les indications suivantes.
+Question 3
+5.1 Attributs
+Le classe Guerrier a pour objectif de repr´esenter un guerrier sp´ecialiste dans le
+maniement de l’arc. Un guerrier est caract´eris´e par plusieurs attributs priv´es :
+un attribut String nom correspondant au nom de l’archer ("Legolas", ...) ;
+un attribut pv de type entier correspondant au nombre de points de vie du
+guerrier. Cet attribut ne peut jamais ˆetre n´egatif.
+un attribut arc de type Arc permettant de savoir quel arc le guerrier poss`ede.
+Si l’archer n’a pas d’arc sur lui, cet attribut vaut null.
+1. parenth`eses incluses, pas d’accent, pas d’espace entre les virgules ou les :
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+3
+5.2 Constructeurs
+La classe Guerrier poss`ede deux constructeurs :
+un constructeur qui prend en entr´ee un seul param`etre pNom de type String
+correspondant au nom du guerrier. Ce constructeur construit un guerrier dont le
+nom correspond `a pNom, qui poss`ede 10 points de vie et qui ne poss`ede pas d’arc ;
+un constructeur qui prend deux param`etres en entr´ee : un String pNom correspondant au nom du guerrier et un entier p correspondant aux points de vie
+initiaux du guerrier. Ce constructeur construit un guerrier dont le nom correspond `a pNom, qui poss`ede p points de vie et qui ne poss`ede pas d’arc. Si le
+param`etre p est inf´erieur `a 1, le guerrier doit tout de mˆeme avoir 1 point de vie.
+5.3 M´ethodes accesseurs
+Ecrire les m´ethodes ´ getPv, getArc et getNom.
+Attention ! Ces accesseurs ne doivent servir que dans vos m´ethodes de test pour
+v´erifier les bonnes valeurs des attributs. Ils ne doivent pas ˆetre utilis´es dans les
+classes Guerrier et Arc - sauf indication contraire dans le descriptif de la
+m´ethode.
+5.4 Autres m´ethodes
+etreBlesse : Ecrire la m´ethode ´ etreBlesse qui ne prend pas de param`etre et
+retourne un bool´een qui vaut true si et seulement si le guerrier est `a 0 points de
+vie.
+subirDegat : Ecrire la m´ethode ´ subirDegat sans r´esultat qui prend un entier
+degat en param`etre et r´eduit les points de vie du guerrier de ces d´egˆats. Les
+d´egˆats ne peuvent pas ˆetre n´egatifs (sinon rien ne se passe) et un guerrier ne
+peut jamais avoir moins de 0 points de vie (si un guerrier arrive `a moins de 0
+points de vie, ses points de vie sont remis `a 0).
+prendreArc : Ecrire la m´ethode ´ prendreArc. Cette m´ethode prend un param`etre arc de type Arc correspondant `a l’arc que le guerrier souhaite prendre
+et retourne un bool´een. Le guerrier prend l’arc si et seulement si il ne poss`ede
+pas d´ej`a d’arc. Lorsque le guerrier ne poss`ede pas d’arc, l’arc pass´e en param`etre
+devient l’arc du guerrier et la m´ethode retourne true. Si le guerrier poss`ede d´ej`a
+un arc, rien ne se passe et la m´ethode doit alors retourner false. Cette m´ethode
+ne fait quelque chose que si le guerrier n’est pas bless´e.
+poserArc : Ecrire la m´ethode ´ poserArc. Cette m´ethode ne prend aucun param`etre en entr´ee et permet `a un guerrier de poser un arc qu’il aurait en sa
+possession. Cette m´ethode met `a jour les attributs concern´es et retourne un objet de type Arc. Si le guerrier a un arc, il pose cet arc et la m´ethode retourne
+l’arc pos´e. Si le guerrier n’a pas d’arc en sa possession lorsque la m´ethode est
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+4
+appel´ee, la m´ethode doit retourner null. Cette m´ethode ne peut fonctionner que
+si le guerrier n’est pas bless´e.
+attaquer : Ecrire la m´ethode ´ attaquer qui permet `a un guerrier d’attaquer un
+autre guerrier. Cette m´ethode prend en param`etre la cible de l’attaque victime
+de type Guerrier. Cette m´ethode consiste `a retirer les points de d´egˆats de l’attaque aux points de vie de la cible. Bien entendu, un guerrier ne peut attaquer
+que s’il n’est pas bless´e. La m´ethode retourne un bool´een qui vaut true si et
+seulement si l’attaque a ´et´e lanc´ee (et a fait des d´egats > 0). Vous ferez attention `a ce que les d´egats correspondent bien aux d´egats de l’arc du guerrier (et
+que les fl`eches diminuent bien). Si un guerrier ne poss`ede pas d’arc, il inflige 0
+d´egat `a sa victime.
+toString : Ecrire la m´ethode ´ toString qui permet d’afficher le statut du guerrier. Cette m´ethode retourne une chaine de la forme :
+nom (pv )-arc(d:degats,f:fleches )
+o`u
+— nom d´esigne le nom du guerrier ;
+— pv d´esigne les points de vie du guerrier ;
+— degats d´esigne les d´egˆats de l’arc poss´ed´e par le guerrier ;
+— fleches d´esigne le nombre de fl`eches dans le carquois de l’arc du guerrier.
+Si le guerrier ne poss`ede pas d’arc, l’affichage se limite `a nom (pv ), par exemple,
+"Legolas(10)".
+5.5 Tests
+Ecrire la classe de test ´ TestGuerrier qui teste l’ensemble des m´ethodes de Guerrier
+pour l’ensemble des situations propos´ees.
+Question 4
+5.6 Main `a ´ecrire
+En plus des tests, on souhaite ´ecrire un programme principal qui v´erifie que les
+m´ethodes fonctionnent bien. Le programme principal doit effectuer les op´erations suivantes dans l’ordre :
+1. dans une variable legolas, cr´eer un Guerrier nomm´e "Legolas" avec 4 points
+de vie (L´egolas sort d’un combat difficile) ;
+2. dans une variable orc, cr´eer un Guerrier nomm´e "Ugluk" avec 3 points de vie ;
+3. faire attaquer Ugluk par Legolas : Legolas n’a pas d’arme et ne fait aucun d´egˆat ;
+4. cr´eer un objet arcElfique faisant 2 d´egats avec 1 fl`eche ;
+5. faire prendre l’arcElfique par Legolas ;
+6. faire attaquer Ugluk par Legolas : Legolas tire une fl`eche sur Ugluk et fait 2
+d´egats, Ugluk a 1 point de vie.
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+5
+7. faire attaquer Ugluk par Legolas : Legolas n’a plus de fl`eche et fait 0 d´egˆat ;
+8. faire prendre par Ugluk un arc orcArc qui fait 5 d´egˆat avec 3 fl`eches ;
+9. faire attaquer Legolas par Ugluk : Legolas prend 5 d´egˆat et est bless´e ;
+10. dans une variable arwen, cr´eer un Guerrier nomm´e "Arwen" avec 10 points de
+vie ;
+11. faire prendre par arwen l’arcElfique ;
+12. recharger l’arc elfique avec 1 fl`eche ;
+13. faire attaquer Ugluk par Arwen : Ugluk prend 2 d´egˆat et est bless´e ;
+14. faire attaquer Arwen par Ugluk : Ugluk est bless´e et son attaque ´echoue, il s’effondre, terrass´e ! ! (grande fˆete chez les elfes ! !)
+Ecrire le ´ main correspondant dans la classe ProgCombat et v´erifier (en affichant
+les guerriers au fur et `a mesure que le combat se d´eroule comme pr´evu).
+Question 5
+6 Tests
+Avant de rendre votre projet, vous v´erifierez que celui-ci fonctionne correctement
+en d´eveloppant une classe de test par classe ´ecrite (comme celles que vous avez utilis´ees
+pendant les TPs).
+Pour cela, pour chaque classe (Arc et Guerrier), vous allez
+r´efl´echir aux diff´erents tests `a ´ecrire ;
+ajouter ces tests dans les classes de test fournies ;
+lancer vos tests et v´erifier que votre classe fonctionne correctement par rapport
+`a vos attentes.
+6.1 S´election des tests
+Normalement, chaque m´ethode et chaque constructeur doit ˆetre test´e pour tous les
+cas qui peuvent se pr´esenter. Il faut donc dans un premier temps :
+d´eterminer toutes les m´ethodes et constructeurs `a tester pour la classe qui vous
+int´eresse ;
+d´eterminer les diff´erents cas `a tester pour chaque m´ethode ;
+pour chaque cas `a tester, d´ecider des valeurs de d´epart utilis´ees pour faire le
+test, les valeurs de retour attendues, faire le test et v´erifier que les retours des
+m´ethodes correspondent bien `a vos attentes.
+Voici, par exemple, les tests `a faire pour tester le constructeur `a deux param`etres
+de la classe Arc. Il est dit dans l’´enonc´e que si un param`etre est n´egatif, la valeur
+associ´ee `a l’attribut doit ˆetre nulle. On peut donc envisager quatre cas d’utilisation du
+constructeur :
+soit les deux param`etres pass´es sont positifs ;
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+6
+soit le param`etre correspondant aux d´egˆats est n´egatif ;
+soit le param`etre correspondant au nombre de fl`eches est n´egatif ;
+soit les deux param`etres sont n´egatifs.
+6.2 Ecriture de la classe de Test ´
+Une fois l’ensemble des cas de test d´etermin´e, il reste `a v´erifier que tous les tests
+sont valid´es lorsque votre programme s’ex´ecute. Vous compl`eterez les classes de test
+correspondantes (TestArc et TestGuerrier) en ajoutant une m´ethode de test pour
+chacun des cas identifi´es.
+6.2.1 Organisation des m´ethodes de test
+Les m´ethodes de test doivent IMPERATIVEMENT suivre les conventions de
+nommage suivantes :
+chaque m´ethode de test se trouve dans la classe correspondant `a la classe `a tester
+(par exemple dans la classe TestGuerrier pour les m´ethodes de Guerrier) ;
+le nom de chaque m´ethode de test
+— d´ebute par le mot ’test’ ;
+— est suivie par le nom de la m´ethode test´ee pr´ec´ed´e d’un underscore, par
+exemple ’ Recharger’ ;
+— puis d’un descriptif sans accent du cas test´e, par exemple ’ RechargeOK’ ;
+Ainsi, la m´ethode v´erifiant que la m´ethode recharger de la classe Arc fonctionne
+bien quand on recharge avec un nombre positif de fl`eches s’appellera ’test Recharger RechargerOK(). Elle se trouvera dans la classe TestArc.
+Pour finir, chaque m´ethode de test est pr´ec´ed´ee d’un commentaire javadoc qui
+explique le cas que teste la m´ethode, par exemple  Test recharger arc avec un
+nombre de fleches positif .
+6.2.2 Ajout d’une m´ethode de test
+Une m´ethode de test a pour objectif de v´erifier que le test est effectivement valide.
+la m´ethode ne prend pas de param`etre et ne retourne rien ;
+les premi`eres instructions de la m´ethode pr´eparent les donn´ees (en appelant des
+constructeurs par exemple) ;
+les instructions suivantes ex´ecutent le test `a proprement parler (`a savoir la
+m´ethode test´ee avec les bonnes donn´ees) ;
+les instructions de v´erification appellent la m´ethode assertEquals `a chaque fois
+qu’une condition attendue doit ˆetre v´erifi´ee ;
+vous pouvez utiliser les accesseurs pour v´erifier les valeurs des attributs mais les
+accesseurs n’ont pas besoin d’ˆetre test´es (ils sont tr`es simples).
+Une fois qu’une m´ethode de test est ´ecrite, elle doit rester dans votre classe de test.
+Ainsi, `a l’issue du projet, vos classes de test poss`ederont toutes les m´ethodes de tests
+(une par cas `a consid´erer) et permettront de tester l’ensemble de l’application.
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+7
+6.2.3 M´ethode assertEquals
+Pour effectuer une v´erification dans un test, il faut utiliser la m´ethode assertEquals.
+Cette m´ethode poss`ede le profil suivant :
+void assertEquals(String erreur, Object attendu, Object obtenu)
+erreur correspond au message d’erreur `a afficher si la v´erification n’est pas
+correcte ;
+attendu d´esigne la valeur attendue ;
+obtenu d´esigne la valeur obtenue lors du test.
+Par exemple, si on veut tester que le ’+’ correspond bien `a la concat´enation, on
+ajouterait la chaine "bon" `a la chaine "jour" et on v´erifierait que le r´esultat serait
+bien la chaine "bonjour".
+1 String s1 =" bon";
+2 String s2 =" jour ";
+3 String s3 = s1 + s2 ;
+4 assertEquals (" erreur : mauvaise concatenation "," bonjour ", s3 );
+6.2.4 Exemple
+Pour le test de la m´ethode recharger de la classe Arc, la classe TestArc s’´ecrirait
+de la mani`ere suivante :
+1 import s t a t i c l i b t e s t . Lanceur . l a n c e r ;
+2 import s t a t i c l i b t e s t . O u tilT e s t . a s s e r tE q u al s ;
+3 import l i b t e s t . ∗ ;
+4
+5 /∗∗ ∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗
+6 ∗ t e s t c l a s s e Arc
+7 ∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗ ∗/
+8 public c l a s s TestArc {
+9
+10 /∗∗
+11 ∗ methode de lancement de s t e s t s
+12 ∗/
+13 public s t a t i c void main ( S t ri n g [ ] a r g s ) {
+14 l a n c e r (new TestArc ( ) , a r g s ) ;
+15 }
+16
+17
+18 /∗∗
+19 ∗ quand l ’ a r c e s t r e c h a r g e c o r r e c t em e n t
+20 ∗/
+21 public void t e s t r e c h a r g e r OK ( ) {
+22 // p r e p a r a ti o n de s donnees
+23 Arc a r c = new Arc ( 3 , 5 ) ;
+24
+25 // methode t e s t e e
+26 a r c . r e c h a r g e r ( 2 ) ;
+27
+28 // v e r i f i c a t i o n s
+29 a s s e r tE q u al s ( ” a r c d oi t t o u j o u r s f a i r e 3 d e g a t s ” , 3 , a r c . ge tDe g a t s ( ) ) ;
+30 a s s e r tE q u al s ( ” a r c d oi t a v oi r 7 f l e c h e s ” , 7 , a r c . g e t Fl e c h e s ( ) ) ;
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+8
+31 }
+32
+33 /∗∗
+34 ∗ quand l ’ a r c e s t r e c h a r g e avec un nombre de f l e c h e s n e g a t i f
+35 ∗/
+36 public void t e s t r e c h a r g e r n e g a t i f ( ) {
+37 // p r e p a r a ti o n de s donnees
+38 Arc a r c = new Arc ( 3 , 5 ) ;
+39
+40 // methode t e s t e e
+41 a r c . r e c h a r g e r ( −2);
+42
+43 // v e r i f i c a t i o n s
+44 a s s e r tE q u al s ( ” a r c d oi t t o u j o u r s f a i r e 3 d e g a t s ” , 3 , a r c . ge tDe g a t s ( ) ) ;
+45 a s s e r tE q u al s ( ” a r c d oi t t o u j o u r s a v oi r 5 f l e c h e s ” , 5 , a r c . g e t Fl e c h e s ( ) ) ;
+46 }
+47
+48
+49 // . . . a u t r e s t e s t s de l a c l a s s e Arc
+50 }
+6.3 Classes de test fournies
+On vous fournit sur l’ENT le package libtest ainsi qu’un d´ebut des classes de test
+TestArc.java et TestGuerrier.java.
+Les classes de test fournies poss`edent d´ej`a :
+— une m´ethode main qui lance tous les tests que vous aurez ´ecrits dans la classe ;
+— un premier test qui v´erifie que vos m´ethodes sont correctement ´ecrites ;
+— quelques autres tests qui v´erifient vos constructeurs (pour ˆetre sˆur que vous cr´eez
+les bons objets).
+Ces classes doivent compiler correctement si vos m´ethodes sont bien d´eclar´ees. Il
+ne faut pas changer les tests initiaux qui v´erifient que vos m´ethodes sont conformes au
+sujet.
+Une fois que vos tests seront ajout´es `a cette classe, l’ex´ecution de tous les tests ne
+doit conduire `a aucune erreur (puisque tous vos tests doivent ˆetre valid´es). Faire de
+bons tests est un moyen de vous assurer de rendre un projet conforme aux attentes.
+ATTENTION, il ne vous est pas demand´e de rendre un menu, mais de rendre
+les classes de tests compl´et´ees par vos m´ethodes de test. Tout rendu autre que ce qui
+est attendu ne sera pas ´evalu´e.
+6.4 D´emarche
+Pour faire correctement votre projet, nous vous conseillons de penser `a tous les tests
+possibles dans un premier temps (cf partie s´election des tests), de les programmer et
+ensuite seulement de commencer `a ´ecrire les diff´erentes classes de votre programme.
+Cela vous permettra
+— d’avoir pens´e `a tous les cas particuliers lorsque vous ´ecrirez votre programme ;
+— de disposer d’un programme plus sˆur.
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+9
+7 G´en´eration de la javadoc
+Pensez `a ´ecrire la javadoc dans vos fichiers sources et g´en´erez la javadoc dans le
+r´epertoire javadoc situ´e `a la racine de votre projet.
+Pour cela, le plus simple est de se placer dans le r´epertoire gr Z nom et d’ex´ecuter
+la commande javadoc
+avec l’option ’-d dest’ pour sp´ecifier le r´epertoire de destination (ici le r´epertoire
+de destination sera javadoc) ;
+avec comme argument les fichiers sources situ´es dans src, `a savoir ’src/*.java’.
+1 javadoc -d javadoc src /*. java
+La javadoc g´en´er´ee est `a rendre avec votre projet.
+Une fois la javadoc g´en´er´ee, il est possible de la consulter en ouvrant le fichier
+javadoc/index.html.
+8 Dernier conseil
+Le projet que vous allez rendre forme un tout (classes + tests + javadoc).
+— Si vous faites les bons tests, vous pourrez facilement d´etecter les erreurs de votre
+projet et le corriger.
+— Inversement si les tests ne sont pas complets, vous risquez d’avoir des classes qui
+fonctionnent mal et un projet qui ne fournit pas les bons r´esultats.
+Ainsi, le meilleur moyen d’avoir une bonne note est de mettre l’accent sur les tests
+qui vous permettront d’´ecrire un code correct et valide (et bien entendu de corriger les
+classes lorsque les tests ne passent pas).
+Pour information, le fait d’´ecrire les tests dans le corrig´e a permis d’´eviter la pr´esence
+de plusieurs erreurs d’inattention dans le corrig´e du projet. Ils vous assurent aussi
+qu’une fois que votre projet est fini, tous les tests restent valides (vous n’avez donc pas
+introduit une nouvelle erreur dans votre programme en faisant une modification).
+Prog1 - TD `a rendre - Legolas contre l’orc ninja Uruk-Hai
+(12 octobre 2023)
+10
