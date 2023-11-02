@@ -187,7 +187,7 @@ public class TestGuerrier {
 		guerrier.subirDegat(5);
 		Arc res = guerrier.poserArc();
 		assertEquals("le guerrier ne doit pas poser l'arc", null, res);
-		assertEquals("le guerrier ne doit pas avoir d'arc", null, guerrier.getArc());
+		assertEquals("le guerrier doit avoir son arc", arc, guerrier.getArc());
 	}
 
 	/**
@@ -209,7 +209,7 @@ public class TestGuerrier {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		Arc arc = new Arc();
 		guerrier.prendreArc(arc);
-		Guerrier victime = new Guerrier("Victime", 5);
+		Guerrier victime = new Guerrier("Victime", 7);
 		boolean res = guerrier.attaquer(victime);
 		assertEquals("le guerrier doit attaquer", true, res);
 		assertEquals("la victime doit avoir 2 pv", 2, victime.getPv());
