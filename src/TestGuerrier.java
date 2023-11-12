@@ -1,5 +1,3 @@
-//import libtest.Test;
-
 import static libtest.Lanceur.lancer;
 import static libtest.OutilTest.assertEquals;
 
@@ -13,7 +11,7 @@ public class TestGuerrier {
 	/**
 	 * methode de lancement des tests
 	 *
-	 * @param args
+	 * @param args non utilise
 	 */
 	public static void main(String[] args) {
 		lancer(new TestGuerrier(), args);
@@ -47,7 +45,7 @@ public class TestGuerrier {
 	 * quand le guerrier est cree avec un nom
 	 */
 	// @Test
-	public void test_constructeur_nom() {
+	public void test_GuerrierConstructeurNom() {
 		Guerrier guerrier = new Guerrier("Toto");
 		String nom = guerrier.getNom();
 		assertEquals("le nom du guerrier est incorrect", "Toto", nom);
@@ -59,7 +57,7 @@ public class TestGuerrier {
 	 * quand le guerrier est cree avec un nom et un nombre de pv
 	 */
 	// @Test
-	public void test_constructeur_nom_pv() {
+	public void test_GuerrierConstructeurPv() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		String nom = guerrier.getNom();
 		assertEquals("le nom du guerrier est incorrect", "Toto", nom);
@@ -71,7 +69,7 @@ public class TestGuerrier {
 	 * quand le guerrier est cree avec un nom et un nombre de pv negatif
 	 */
 	// @Test
-	public void test_constructeur_nom_pv_negatif() {
+	public void test_GuerrierConstructeurPvNegatif() {
 		Guerrier guerrier = new Guerrier("Toto", -5);
 		String nom = guerrier.getNom();
 		assertEquals("le nom du guerrier est incorrect", "Toto", nom);
@@ -84,7 +82,7 @@ public class TestGuerrier {
 	 * quand le guerrier subit des degats
 	 */
 	// @Test
-	public void test_subirDegat() {
+	public void test_SubirDegat() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		guerrier.subirDegat(2);
 		assertEquals("le guerrier doit avoir 3 pv", 3, guerrier.getPv());
@@ -94,7 +92,7 @@ public class TestGuerrier {
 	 * quand le guerrier est blesse
 	 */
 	// @Test
-	public void test_etreBlesse_blesse() {
+	public void test_EtreBlesseBlesse() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		guerrier.subirDegat(5);
 		boolean blesse = guerrier.etreBlesse();
@@ -105,7 +103,7 @@ public class TestGuerrier {
 	 * quand le guerrier n'est pas blesse
 	 */
 	// @Test
-	public void test_etreBlesse() {
+	public void test_EtreBlesse() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		boolean blesse = guerrier.etreBlesse();
 		assertEquals("le guerrier ne doit pas etre blesse", false, blesse);
@@ -115,7 +113,7 @@ public class TestGuerrier {
 	 * quand le guerrier prend un arc
 	 */
 	// @Test
-	public void test_prendreArc_OK() {
+	public void test_PrendreArcOK() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		Arc arc = new Arc();
 		boolean res = guerrier.prendreArc(arc);
@@ -129,7 +127,7 @@ public class TestGuerrier {
 	 * quand le guerrier prend un arc alors qu'il est blesse
 	 */
 	// @Test
-	public void test_prendreArc_blesse() {
+	public void test_PrendreArcBlesse() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		guerrier.subirDegat(5);
 		Arc arc = new Arc();
@@ -142,7 +140,7 @@ public class TestGuerrier {
 	 * quand le guerrier prend un arc alors qu'il a deja un arc
 	 */
 	// @Test
-	public void test_prendreArc_deja_arc() {
+	public void test_PrendreArcDejaArc() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		Arc arc = new Arc();
 		guerrier.prendreArc(arc);
@@ -156,7 +154,7 @@ public class TestGuerrier {
 	 * quand le guerrier prend un arc null
 	 */
 	// @Test
-	public void test_prendreArc_null() {
+	public void test_PrendreArcNull() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		boolean res = guerrier.prendreArc(null);
 		assertEquals("le guerrier ne doit pas prendre l'arc", false, res);
@@ -167,7 +165,7 @@ public class TestGuerrier {
 	 * quand le guerrier pose son arc
 	 */
 	// @Test
-	public void test_poserArc_OK() {
+	public void test_PoserArcOK() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		Arc arc = new Arc();
 		guerrier.prendreArc(arc);
@@ -180,7 +178,7 @@ public class TestGuerrier {
 	 * quand le guerrier pose son arc alors qu'il est blesse
 	 */
 	// @Test
-	public void test_poserArc_blesse() {
+	public void test_PoserArcBlesse() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		Arc arc = new Arc();
 		guerrier.prendreArc(arc);
@@ -194,7 +192,7 @@ public class TestGuerrier {
 	 * quand le guerrier pose son arc alors qu'il n'a pas d'arc
 	 */
 	// @Test
-	public void test_poserArc_pas_arc() {
+	public void test_PoserArcPasArc() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		Arc res = guerrier.poserArc();
 		assertEquals("le guerrier ne doit pas poser l'arc", null, res);
@@ -205,7 +203,7 @@ public class TestGuerrier {
 	 * quand le guerrier attaque un autre guerrier
 	 */
 	// @Test
-	public void test_attaquer_OK() {
+	public void test_AttaquerOK() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		Arc arc = new Arc();
 		guerrier.prendreArc(arc);
@@ -220,7 +218,7 @@ public class TestGuerrier {
 	 * quand le guerrier attaque un autre guerrier alors qu'il est blesse
 	 */
 	// @Test
-	public void test_attaquer_blesse() {
+	public void test_AttaquerBlesse() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		guerrier.subirDegat(5);
 		Arc arc = new Arc();
@@ -236,7 +234,7 @@ public class TestGuerrier {
 	 * quand le guerrier attaque un autre guerrier alors qu'il n'a pas d'arc
 	 */
 	// @Test
-	public void test_attaquer_pas_arc() {
+	public void test_AttaquerPasArc() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		Guerrier victime = new Guerrier("Victime", 5);
 		boolean res = guerrier.attaquer(victime);
@@ -248,7 +246,7 @@ public class TestGuerrier {
 	 * quand le guerrier attaque un autre guerrier alors qu'il n'a plus de fleches
 	 */
 	// @Test
-	public void test_attaquer_plus_fleches() {
+	public void test_AttaquerPlusFleches() {
 		Guerrier guerrier = new Guerrier("Toto", 5);
 		Arc arc = new Arc();
 		guerrier.prendreArc(arc);

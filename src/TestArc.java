@@ -17,7 +17,7 @@ public class TestArc {
 	/**
 	 * verifieque les méthodes sont bien appelée
 	 */
-	public void test_arc_methodes() {
+	public void test_ArcConstructeur() {
 		Arc arc = new Arc(3,5);
 		assertEquals("ordre parametres est mauvais",3,arc.getDegats());
 		assertEquals("ordre parametres est mauvais",5,arc.getFleches());
@@ -30,7 +30,7 @@ public class TestArc {
 	/**
 	 * quand l'arc est recharge correctement
 	 */
-	public void test_recharger_OK() {
+	public void test_RechargerOK() {
 		// preparation des donnees
 		Arc arc = new Arc(3,5);
 
@@ -45,7 +45,7 @@ public class TestArc {
 	/**
 	 * quand l'arc est recharge avec un nombre de fleches negatif
 	 */
-	public void test_recharger_negatif() {
+	public void test_RechargerNegatif() {
 		// preparation des donnees
 		Arc arc = new Arc(3,5);
 

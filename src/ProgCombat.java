@@ -1,36 +1,42 @@
+import static libtest.Lanceur.lancer;
+
 public class ProgCombat {
 
 
     public ProgCombat() {
     }
 
-    public void execute() {
+    public static void main(String[] args) {
+
+        tests(args);
+
+
         Guerrier legolas = new Guerrier("Legolas", 4);
         System.out.println(legolas);
-        Guerrier ugluk = new Guerrier("Ugluk", 3);
-        System.out.println(ugluk);
+        Guerrier orc = new Guerrier("Ugluk", 3);
+        System.out.println(orc);
 
-        legolas.attaquer(ugluk);
+        legolas.attaquer(orc);
         System.out.println(legolas);
-        System.out.println(ugluk);
+        System.out.println(orc);
 
         Arc arcElfique = new Arc(2, 1);
         legolas.prendreArc(arcElfique);
         System.out.println(legolas);
 
         for (int i = 0; i < 3; i++) {
-            legolas.attaquer(ugluk);
+            legolas.attaquer(orc);
             System.out.println(legolas);
-            System.out.println(ugluk);
+            System.out.println(orc);
         }
 
         Arc orcArc = new Arc(5, 3);
-        ugluk.prendreArc(orcArc);
-        System.out.println(ugluk);
+        orc.prendreArc(orcArc);
+        System.out.println(orc);
 
-        ugluk.attaquer(legolas);
+        orc.attaquer(legolas);
         System.out.println(legolas);
-        System.out.println(ugluk);
+        System.out.println(orc);
 
         Guerrier arwen = new Guerrier("Arwen", 10);
         System.out.println(arwen);
@@ -41,12 +47,20 @@ public class ProgCombat {
         arcElfique.recharger(1);
         System.out.println(arcElfique);
 
-        arwen.attaquer(ugluk);
+        arwen.attaquer(orc);
         System.out.println(arwen);
-        System.out.println(ugluk);
+        System.out.println(orc);
 
-        ugluk.attaquer(arwen);
+        orc.attaquer(arwen);
         System.out.println(arwen);
-        System.out.println(ugluk);
+        System.out.println(orc);
     }
+
+    private static void tests(String[] args) {
+        new TestArc();
+//        lancer(new TestArc(), args);
+//        lancer(new TestGuerrier(), args);
+
+    }
+
 }
