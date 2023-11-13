@@ -260,4 +260,24 @@ public class TestGuerrier {
 		assertEquals("le guerrier doit avoir 0 fleches", 0, arc.getFleches());
 	}
 
+	/**
+	 * Verification de la méthode toString de la classe Guerrier
+	 */
+	public void test_ToStringSansArc() {
+		Guerrier guerrier = new Guerrier("Toto");
+		assertEquals("la conversion en string n'est pas bonne", "Toto(10)", guerrier.toString());
+	}
+
+	/**
+	 * Verification de la méthode toString de laclasse Guerrier
+	 */
+	public void test_ToStringAvecArc() {
+		Guerrier guerrier = new Guerrier("Toto");
+		Arc arc = new Arc();
+
+		guerrier.prendreArc(arc);
+
+		assertEquals("la conversion en string n'est pas bonne", "Toto(10)" + arc, guerrier.toString());
+	}
+
 }
