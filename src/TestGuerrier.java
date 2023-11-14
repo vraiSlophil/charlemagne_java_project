@@ -3,8 +3,7 @@ import static libtest.OutilTest.assertEquals;
 
 
 /**
- * classe de test qui permet de verifier que la classe Guerrier
- * fonctionne correctement à l'image de la classe Arc
+ * Classe de test qui permet de verifier que la classe Guerrier est correcte
  */
 public class TestGuerrier {
 
@@ -20,25 +19,24 @@ public class TestGuerrier {
 	/**
 	 * test des methodes de guerrier
 	 */
-	// @Test
-//	public void test_guerrier_methodes() {
-//		Guerrier guerrier = new Guerrier("Toto",10);
-//		int pv = guerrier.getPv();
-//		Arc arc = guerrier.getArc();
-//		String nom = guerrier.getNom();
-//
-//		boolean b = guerrier.etreBlesse();
-//		guerrier.subirDegat(1);
-//
-//		Arc arcN = new Arc();
-//		boolean resPrendre = guerrier.prendreArc(arcN);
-//		Arc resPoser = guerrier.poserArc();
-//
-//		Guerrier victime = new Guerrier("vict");
-//		boolean resAttaque = guerrier.attaquer(victime);
-//
-//		String guerrierS = guerrier.toString();
-//	}
+	public void test_guerrier_methodes() {
+		Guerrier guerrier = new Guerrier("Toto",10);
+		int pv = guerrier.getPv();
+		Arc arc = guerrier.getArc();
+		String nom = guerrier.getNom();
+
+		boolean b = guerrier.etreBlesse();
+		guerrier.subirDegat(1);
+
+		Arc arcN = new Arc();
+		boolean resPrendre = guerrier.prendreArc(arcN);
+		Arc resPoser = guerrier.poserArc();
+
+		Guerrier victime = new Guerrier("vict");
+		boolean resAttaque = guerrier.attaquer(victime);
+
+		String guerrierS = guerrier.toString();
+	}
 
 
 	/**

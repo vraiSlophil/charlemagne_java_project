@@ -1,5 +1,9 @@
 import static libtest.Lanceur.lancer;
 
+/**
+ * classe principale pour executer un combat
+ */
+
 public class ProgCombat {
 
 

@@ -1,3 +1,7 @@
+/**
+ * Classe Guerrier, elle représente un guerrier
+ */
+
 public class Guerrier {
 
     private String nom;

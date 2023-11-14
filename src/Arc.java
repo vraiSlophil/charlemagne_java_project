@@ -1,3 +1,6 @@
+/**
+ * Classe Arc, elle représente un arc
+ */
 public class Arc {
     private int degats;
     private int fleches;

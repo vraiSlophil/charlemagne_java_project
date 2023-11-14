@@ -1,9 +1,9 @@
 import static libtest.Lanceur.lancer;
 import static libtest.OutilTest.assertEquals;
 
-/******************
- * test classe Arc
- *******************/
+/**
+ * Class de test qui permet de verifier que la classe Arc est correcte
+ */
 public class TestArc {
 
 	/**
